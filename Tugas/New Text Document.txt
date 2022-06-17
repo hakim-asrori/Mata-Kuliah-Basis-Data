@@ -1,0 +1,7 @@
+update transaksi set total_bayar = 
+(select sum(total) from detail_transaksi where transaksi_id = 
+
+(select max(transaksi_id) from detail_transaksi )) 
+
+where transaksi_id = 
+(select max(transaksi_id) from detail_transaksi);
